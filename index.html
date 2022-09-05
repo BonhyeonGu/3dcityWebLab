@@ -17,7 +17,6 @@
       .btn {
         list-style-type: none;
         margin: 0;
-        padding: 0;
         #overflow: hidden;
         background-color: #333;
         #display:inline-block;
@@ -25,6 +24,7 @@
         color: white;
         text-align: center;
         padding: 14px 16px;
+        width: 150px;
         text-decoration: none;
         border-top: 1px solid #bbb;
         border-bottom: 1px solid #bbb;
@@ -70,22 +70,56 @@
       width: auto; 
       max-width: 100px; 
     }
+
+
+    #login {
+      text-align: center;
+    }
+    
+    #pw {
+      width: 200px;
+      height: 30px;  
+      #visibility: hidden;
+    }
     </style>
   </head>
+
+  <script>
+    $(document).ready(function(){
+      $("#windowVideo").hide();
+      $("#windowVideoBlock").hide();
+
+      $("#btnClose").on("click", function(){
+          let src = "http://www.youtube.com/embed/?enablejsapi=1&origin=http://example.com"+
+              "&autoplay=1";
+          $("#windowVideo").children('iframe').attr("src", src);
+          $("#windowVideo").hide()
+          $("#windowVideoBlock").hide()
+      });
+
+      $("#loading").hide()
+    });
+  </script>
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <body>
         <span style="display:inline-block; height: 10px;"></span>
         <div id="title">Digital Twin Testbed Platform(2022) for Smart City</div>
         <h4>Welcome to the 3D City Database (3DCityDB) Web-Map-Client</h4>
+        
         <div class="container">
-        <a class="btn" href="3dwebclient/" target="_blank">3D Web-Map-Client</a>
-        <span style="display:inline-block; width: 10px;"></span>
-        <a class="btn" href="data/" target="_blank">Data</a>
-            <!--<li>
-              <a href="examples/" target="_blank">Examples</a>
-            </li>-->
+          <a class="btn" href="3dwebclient/" target="_blank">3D Web-Map-Client</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btn" href="data/" target="_blank">Show Data</a>
+              <!--<li>
+                <a href="examples/" target="_blank">Examples</a>
+              </li>-->
         </div>
+        <!--
+        <div id="login">
+          <input id="pw"></input>
+        </div>
+      -->
         <div class="containerimg">
           <a href="https://www.3dcitydb.org/"><img id="theimg" src="CityDBonDocker-big.png" /></a>
           <span style="display:inline-block; width: 10px;"></span>
