@@ -6,12 +6,35 @@
       body {
         background-image: url("bg.jpeg");
         font-family: Arial, Helvetica, sans-serif;
-        #text-align: center;
       }
 
       #title {
         text-align: center;
         font-size: 2.5em;
+      }
+
+      #menu1 {
+        position: absolute;
+        top: 20%;
+        left: 20%;
+      }
+
+      #menu2 {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+      }
+
+      #menu3 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+      }
+
+      #menu4 {
+        position: absolute;
+        top: 20%;
+        left: 65%;
       }
 
       .btnMain {
@@ -35,53 +58,61 @@
         background-color: #111;
       }
 
-    .container
-      {
+      .container {
         display: flex;
         align-items: center;
         justify-content: center;
       }
       
-     .containerimg
-      {
+      .containerimg {
         position: absolute;
         text-align: left;
 
         bottom: 10px;
       }
+
+      .contributor {
+        position: absolute;
+        width: 950px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        bottom: 60px;
+        font-size: 1.2em;
+        color: aliceblue;
+        background-color: rgb(0, 0, 0);
+      }
       
-    div img {
-      vertical-align: middle; 
-    }
+      div img {
+        vertical-align: middle; 
+      }
 
-    p.blocktext {
-      margin-left: auto;
-      margin-right: auto;
-      width: 80%;
-    }
+      p.blocktext {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+      }
 
-    h2, h4 {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
+      h2, h4 {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
 
-    #theimg {
-      height: auto; 
-      width: auto; 
-      max-width: 100px; 
-    }
+      #theimg {
+        height: auto; 
+        width: auto; 
+        max-width: 100px; 
+      }
 
-
-    #login {
-      text-align: center;
-    }
+      #login {
+        text-align: center;
+      }
     
-    #pw {
-      width: 200px;
-      height: 30px;  
-      #visibility: hidden;
-    }
+      #pw {
+        width: 200px;
+        height: 30px;  
+        #visibility: hidden;
+      }
     </style>
   </head>
 
@@ -89,7 +120,6 @@
     $(document).ready(function(){
       $("#windowVideo").hide();
       $("#windowVideoBlock").hide();
-
       $("#btnClose").on("click", function(){
           let src = "http://www.youtube.com/embed/?enablejsapi=1&origin=http://example.com"+
               "&autoplay=1";
@@ -107,7 +137,7 @@
         <span style="display:inline-block; height: 10px;"></span>
         <div id="title">Digital Twin Testbed Platform(2022) for Smart City</div>
         <h4>Welcome to the Busan Smart City Lab</h4>
-        
+        <!--
         <div class="container">
           <a class="btnMain" href="#" style="font-size:0.99em;">SmartCityLab Project</a>
           <span style="display:inline-block; width: 10px;"></span>
@@ -116,19 +146,48 @@
           <a class="btnMain" href="#">Tutorial</a>
           <span style="display:inline-block; width: 10px;"></span>
           <a class="btnMain" href="data/" target="_blank">Show Data</a>
-              <!--<li>
+              <li>
                 <a href="examples/" target="_blank">Examples</a>
-              </li>-->
+              </li>
         </div>
-        <!--
-        <div id="login">
-          <input id="pw"></input>
+        -->
+        <div id="menu1">
+          <a class="btnMain" href="/project" style="font-size:0.99em;">SmartCityLab Project</a>
+          <span style="display:inline-block; width: 10px;"></span>
         </div>
-      -->
+
+        <div id="menu2">
+          <a class="btnMain" href="3dwebclient/" target="_blank">3D Web-Map-Client</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnMain" href="#">1. BusanSmartCity</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnMain" href="#">2. Japan</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnMain" href="3dwebclient/">Edit View</a>
+          <span style="display:inline-block; width: 10px;"></span>
+        </div>
+        
+        <div id="menu3">
+          <a class="btnMain" href="#">Tutorial</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnMain" href="/tutorial">01First Step</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnMain" href="#" style="font-size:0.99em;">준비중</a>
+          <span style="display:inline-block; width: 10px;"></span>
+        </div>
+        
+        <div id="menu4">
+          <a class="btnMain" href="data/" target="_blank">Show Data</a>
+          <span style="display:inline-block; width: 10px;"></span>
+        </div>
+
         <div class="containerimg">
           <a href="https://www.3dcitydb.org/"><img id="theimg" src="CityDBonDocker-big.png" /></a>
           <span style="display:inline-block; width: 10px;"></span>
           <a href="https://www.gis.bgu.tum.de/"><img id="theimg" src="TUM_Logo_blau_rgb_s.svg" /></a>
+        </div>
+        <div class="contributor">
+          주관연구기관 : 동아대학교 &nbsp;&nbsp; 공동연구개발기관 : 한국수자원공사 | 한국국토정보공사 | 한국건설기술연구원 | (주) DI 솔루션
         </div>
       </body>
     </html>

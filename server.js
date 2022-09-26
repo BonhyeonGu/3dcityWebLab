@@ -83,6 +83,7 @@
     app.use('/data', express.static('data'), serveIndex('data', {'icons': true, 'view': 'details'}));
     
     app.use('/examples', express.static('examples'), serveIndex('examples', {'icons': true, 'view': 'details'}));
+    app.use(express.static('public'));
 
 
     function getRemoteUrlFromParam(req) {
@@ -120,7 +121,7 @@
         });
     }
 
-    app.get('/proxy/*', function(req, res, next) {
+    app.get('/proxy/*', function(req, res, next) {  
         // look for request like http://localhost:8080/proxy/http://example.com/file?query=1
         var remoteUrl = getRemoteUrlFromParam(req);
         if (!remoteUrl) {
@@ -163,6 +164,20 @@
         });
     });
 
+
+//---------------------------------------------------
+
+
+    app.get("/project", (req, res)=>{
+        res.redirect("document/project/01/index.html");
+    })
+
+    app.get("/tutorial", (req, res)=>{
+        res.redirect("document/tutorial/01/index.html");
+    })
+
+//---------------------------------------------------
+
     var server = app.listen(argv.port, argv.public ? undefined : 'localhost', function() {
     	console.log('Cesium development server running publicly.  Connect to localhost:%d/', server.address().port);
     });
@@ -198,6 +213,9 @@
             process.exit(1);
         }
     });
+
+
+    
 
 })();
 
