@@ -48,6 +48,7 @@
         text-align: center;
         padding: 14px 16px;
         width: 150px;
+        line-height: 13px;
         height: 13px;
         text-decoration: none;
         border-top: 1px solid #bbb;
@@ -56,6 +57,26 @@
 
       .btnMain:hover {
         background-color: #111;
+      }
+
+      .btnSub2, .btnSub3 {
+        list-style-type: none;
+        margin: 0;
+        background-color: rgb(134, 134, 134);
+        display: block;
+        color: white;
+        text-align: left;
+        padding: 14px 16px;
+        width: 155px;
+        line-height: 9px;
+        height: 9px;
+        text-decoration: none;
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+      }
+
+      .btnSub2:hover, .btnSub3:hover {
+        background-color: rgb(94, 94, 94);
       }
 
       .container {
@@ -73,7 +94,7 @@
 
       .contributor {
         position: absolute;
-        width: 950px;
+        width: 1050px;
         left: 50%;
         transform: translate(-50%, 0%);
         bottom: 60px;
@@ -114,21 +135,21 @@
         #visibility: hidden;
       }
     </style>
+    <script src ="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src ="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
   </head>
 
   <script>
     $(document).ready(function(){
-      $("#windowVideo").hide();
-      $("#windowVideoBlock").hide();
-      $("#btnClose").on("click", function(){
-          let src = "http://www.youtube.com/embed/?enablejsapi=1&origin=http://example.com"+
-              "&autoplay=1";
-          $("#windowVideo").children('iframe').attr("src", src);
-          $("#windowVideo").hide()
-          $("#windowVideoBlock").hide()
+      $(".btnSub2").hide();
+      $(".btnSub3").hide();
+      $("#btnMain2").on("click", function(){
+        $(".btnSub2").toggle('fast');
       });
 
-      $("#loading").hide()
+      $("#btnMain3").on("click", function(){
+        $(".btnSub3").toggle('fast');
+      });
     });
   </script>
   <meta charset="utf-8">
@@ -152,27 +173,27 @@
         </div>
         -->
         <div id="menu1">
-          <a class="btnMain" href="/project" style="font-size:0.99em;">SmartCityLab Project</a>
+          <a class="btnMain" href="/project" style="font-size:0.99em;" target="_blank">SmartCityLab Project</a>
           <span style="display:inline-block; width: 10px;"></span>
         </div>
 
         <div id="menu2">
-          <a class="btnMain" href="3dwebclient/" target="_blank">3D Web-Map-Client</a>
+          <a id="btnMain2" class="btnMain" href="#">3D Web-Map-Client</a>
           <span style="display:inline-block; width: 10px;"></span>
-          <a class="btnMain" href="#">1. BusanSmartCity</a>
+          <a class="btnSub2" href="#">1. BusanCity(LoD1)</a>
           <span style="display:inline-block; width: 10px;"></span>
-          <a class="btnMain" href="#">2. Japan</a>
+          <a class="btnSub2" href="#">2. JapanSmartVillage</a>
           <span style="display:inline-block; width: 10px;"></span>
-          <a class="btnMain" href="3dwebclient/">Edit View</a>
+          <a class="btnSub2" href="3dwebclient/" target="_blank">Edit View</a>
           <span style="display:inline-block; width: 10px;"></span>
         </div>
         
         <div id="menu3">
-          <a class="btnMain" href="#">Tutorial</a>
+          <a id="btnMain3" class="btnMain" href="#">Tutorial</a>
           <span style="display:inline-block; width: 10px;"></span>
-          <a class="btnMain" href="/tutorial">01First Step</a>
+          <a class="btnSub3" href="/tutorial" target="_blank">01First Step</a>
           <span style="display:inline-block; width: 10px;"></span>
-          <a class="btnMain" href="#" style="font-size:0.99em;">준비중</a>
+          <a class="btnSub3" href="#" style="font-size:0.99em;">준비중</a>
           <span style="display:inline-block; width: 10px;"></span>
         </div>
         
