@@ -1,5 +1,3 @@
 data/
 node_modules/
-public/.DS_Store
-public/document/.DS_Store
-public/tutorial/.DS_Store
+.DS_Store
