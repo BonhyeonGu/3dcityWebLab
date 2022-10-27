@@ -59,7 +59,7 @@
         background-color: #111;
       }
 
-      .btnSub2, .btnSub3 {
+      .btnSub2 {
         list-style-type: none;
         margin: 0;
         background-color: rgb(134, 134, 134);
@@ -67,7 +67,23 @@
         color: white;
         text-align: left;
         padding: 14px 16px;
-        width: 155px;
+        width: 250px;
+        line-height: 9px;
+        height: 9px;
+        text-decoration: none;
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+      }
+
+      .btnSub3 {
+        list-style-type: none;
+        margin: 0;
+        background-color: rgb(134, 134, 134);
+        display: block;
+        color: white;
+        text-align: left;
+        padding: 14px 16px;
+        width: 150px;
         line-height: 9px;
         height: 9px;
         text-decoration: none;
@@ -117,7 +133,7 @@
       p.blocktext {
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 300px;
       }
 
       h2, h4 {
@@ -131,6 +147,7 @@
         width: auto; 
         max-width: 100px; 
       }
+      
     </style>
     <script src ="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src ="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
@@ -142,12 +159,15 @@
       $(".btnSub3").hide();
       $("#btnMain2").on("click", function(){
         $(".btnSub2").toggle('fast');
+        $(".btnSub3").hide('fast');
       });
 
       $("#btnMain3").on("click", function(){
         $(".btnSub3").toggle('fast');
+        $(".btnSub2").hide('fast');
       });
     });
+
   </script>
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
