@@ -11,16 +11,19 @@
 ## Overview
 
 <div align="center">
+
 <이미지는 준비중입니다.>
+
 </div>
 
-3DCityDB, 3DCity
+  
+3dcitydb, 3dcitydb-web-map, bimserver, bimsurfer, xeokit-viewer 가 사용될 계획입니다.
 
 ## Install
 
-0. 3DC
+0. 3dcitydb에 데이터를 보관하고, 가공해서 불러와 사용합니다. 3dcitydb의 사용법은 다른 문서를 참고해 주세요
  
-1. node js 환경을 구성해주세요
+1. node.js 환경을 구성해주세요
 2. 해당 reposit을 clone 해주세요, branch에 주의해주세요
 3. clone된 workspace에 이름이 "data"인 directory 추가해주세요. 해당 directory가 웹서비스의 'ShowData'경로가 될 것입니다.
 4. workspace내에서 node server.js 명령어로 실행 가능합니다.
