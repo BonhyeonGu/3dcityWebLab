@@ -14,5 +14,5 @@ RUN ls -al /var/www/data/
 
 WORKDIR /var/www
 USER node
-EXPOSE 8100
+EXPOSE <web outport>
 CMD [ "node", "server.js", "--public"]
