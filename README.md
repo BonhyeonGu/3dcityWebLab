@@ -16,13 +16,17 @@
 
 </div>
 
-  
-3dcitydb, 3dcitydb-web-map, bimserver, bimsurfer, xeokit-viewer 가 사용될 계획입니다.
 
-## Install
+3dcitydb에 데이터를 보관하고, 가공해서 불러와 사용합니다. 3dcitydb의 사용법은 다른 문서를 참고해 주세요  
+bimserver, bimsurfer, xeokit-viewer 가 사용될 계획입니다.
 
-0. 3dcitydb에 데이터를 보관하고, 가공해서 불러와 사용합니다. 3dcitydb의 사용법은 다른 문서를 참고해 주세요
- 
+## Docker Install (full)
+
+1. 동봉되어있는 Dockerfile, docker-compose.yml에 꺽쇄 괄호로 되어있는 부분을 직접 수정해주세요
+2. 다음으로 docker-compose up -d 를 사용하여 구성 완료됩니다.
+
+## On-premise Install (web-only)
+
 1. node.js 환경을 구성해주세요
 2. 해당 reposit을 clone 해주세요, branch에 주의해주세요
 3. clone된 workspace에 이름이 "data"인 directory 추가해주세요. 해당 directory가 웹서비스의 'ShowData'경로가 될 것입니다.
