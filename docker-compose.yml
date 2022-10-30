@@ -1,0 +1,23 @@
+version: "3"
+services:
+  3dcitydb:
+    container_name: <db name>
+    image: 3dcitydb/3dcitydb-pg:14-3.2-4.1.0
+    ports:
+      - <db outport>:5432
+    environment:
+      SRID: 25832
+      POSTGRES_DB: city
+      POSTGRES_USER: city
+      POSTGRES_PASSWORD: <pw>
+    restart: always
+  3dcitydb-web-map-test:
+    container_name: <web name>
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - <data>:/var/www/data/
+    ports:
+      - "<web outport>:8000"
+    restart: always
