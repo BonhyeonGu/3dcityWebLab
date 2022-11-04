@@ -1,0 +1,147 @@
+body {
+    background-image: url("bg.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+    text-align: center;
+    font-size: 50px;
+    filter: drop-shadow(1px 1px 1px #000);
+}
+
+.menus {
+    display: flex;
+    justify-content : center;
+}
+
+.menu {
+    position: relative;
+    top: 50px;
+    float:left;
+}
+
+.menuDummy {
+    width: 50px;
+    height: 10px;
+}
+
+.btnMain {
+    list-style-type: none;
+    margin: 0;
+    #overflow: hidden;
+    background-color: #333;
+    #display:inline-block;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    width: 150px;
+    line-height: 13px;
+    height: 13px;
+    text-decoration: none;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+}
+
+.btnMain:hover {
+    background-color: #111;
+}
+
+.btnSub2 {
+    list-style-type: none;
+    margin: 0;
+    background-color: rgb(134, 134, 134);
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    width: 150px;
+    line-height: 20px;
+    height: 20px;
+    text-decoration: none;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+}
+
+.btnSub22 {
+    font-size: 15px;
+}
+
+.btnSub23 {
+    font-size: 14px;
+    line-height: 12px;
+}
+
+.btnSub3 {
+    list-style-type: none;
+    margin: 0;
+    background-color: rgb(134, 134, 134);
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    width: 150px;
+    line-height: 9px;
+    height: 9px;
+    text-decoration: none;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+}
+
+.btnSub2:hover, .btnSub3:hover {
+    background-color: rgb(94, 94, 94);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contributor {
+    position: absolute;
+    width: 1000px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    bottom: 60px;
+    font-size: 20px;
+    color: aliceblue;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.containerimg {
+    position: absolute;
+    text-align: left;
+    left: 10px;
+    bottom: 10px;
+    filter: drop-shadow(5px 5px 5px #000);
+}
+
+#theimg1 {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+}
+
+#theimg2 {
+    width: 80px;
+    height: 40px;
+    object-fit: cover;
+}
+
+div img {
+    vertical-align: middle; 
+}
+
+p.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+h2, h4 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
