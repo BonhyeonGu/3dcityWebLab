@@ -1,73 +1,232 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Digital Twin Testbed Platform</title>
+    <style>
+      body {
+        background-image: url("bg.jpg");
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #title {
+        text-align: center;
+        font-size: 2.5em;
+      }
+
+      #menu1 {
+        position: absolute;
+        top: 20%;
+        left: 20%;
+      }
+
+      #menu2 {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+      }
+
+      #menu3 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+      }
+
+      #menu4 {
+        position: absolute;
+        top: 20%;
+        left: 65%;
+      }
+
+      .btnMain {
+        list-style-type: none;
+        margin: 0;
+        #overflow: hidden;
+        background-color: #333;
+        #display:inline-block;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        width: 150px;
+        line-height: 13px;
+        height: 13px;
+        text-decoration: none;
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+      }
+
+      .btnMain:hover {
+        background-color: #111;
+      }
+
+      .btnSub2 {
+        list-style-type: none;
+        margin: 0;
+        background-color: rgb(134, 134, 134);
+        display: block;
+        color: white;
+        text-align: left;
+        padding: 14px 16px;
+        width: 250px;
+        line-height: 9px;
+        height: 9px;
+        text-decoration: none;
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+      }
+
+      .btnSub3 {
+        list-style-type: none;
+        margin: 0;
+        background-color: rgb(134, 134, 134);
+        display: block;
+        color: white;
+        text-align: left;
+        padding: 14px 16px;
+        width: 150px;
+        line-height: 9px;
+        height: 9px;
+        text-decoration: none;
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+      }
+
+      .btnSub2:hover, .btnSub3:hover {
+        background-color: rgb(94, 94, 94);
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .containerimg {
+        position: absolute;
+        text-align: left;
+        left: 30px;
+        bottom: 40px;
+      }
+
+      .contributor {
+        position: absolute;
+        width: 1050px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        bottom: 60px;
+        font-size: 1.2em;
+        color: aliceblue;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+      }
+
+      .contributorImg {
+        width: auto; height: auto;
+        max-width: 50px;
+        max-height: 50px;
+      }
+      
+      div img {
+        vertical-align: middle; 
+      }
+
+      p.blocktext {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+      }
+
+      h2, h4 {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      #theimg {
+        height: auto; 
+        width: auto; 
+        max-width: 100px; 
+      }
+      
+    </style>
     <script src ="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src ="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-</head>
+  </head>
 
-<script>
+  <script>
     $(document).ready(function(){
-            $(".btnSub2").hide();$(".btnSub3").hide();
-            $("#btnMain2").on("click", function(){
-                $(".btnSub2").fadeToggle('fast');
-                $(".btnSub3").fadeOut('fast');
-        });
-        $("#btnMain3").on("click", function(){
-            $(".btnSub3").fadeToggle('fast');
-            $(".btnSub2").fadeOut('fast');
-        });
+      $(".btnSub2").hide();
+      $(".btnSub3").hide();
+      $("#btnMain2").on("click", function(){
+        $(".btnSub2").toggle('fast');
+        $(".btnSub3").hide('fast');
+      });
+
+      $("#btnMain3").on("click", function(){
+        $(".btnSub3").toggle('fast');
+        $(".btnSub2").hide('fast');
+      });
     });
 
-</script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
-    <span style="display:inline-block; height: 10px;"></span>
-    <div id="title">Digital Twin Testbed Platform(2022) for Smart City</div>
-    <h4>Welcome to the Busan Smart City Lab</h4>
-    <div class="menus">
-        <div class="menu">
-            <a class="btnMain" href="/project" style="font-size:0.99em;" target="_blank">SmartCityLab Project</a>
-            <span style="display:inline-block; width: 10px;"></span>
+  </script>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <body>
+        <span style="display:inline-block; height: 10px;"></span>
+        <div id="title">Digital Twin Testbed Platform(2022) for Smart City</div>
+        <h4>Welcome to the Busan Smart City Lab</h4>
+        <!--
+        <div class="container">
+          <a class="btnMain" href="#" style="font-size:0.99em;">SmartCityLab Project</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnMain" href="3dwebclient/" target="_blank">3D Web-Map-Client</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnMain" href="#">Tutorial</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnMain" href="data/" target="_blank">Show Data</a>
+              <li>
+                <a href="examples/" target="_blank">Examples</a>
+              </li>
         </div>
-        <div class="menu menuDummy"></div>
-        <div class="menu">
-            <a id="btnMain2" class="btnMain" href="#">3D Web-Map-Client</a>
-            <span style="display:inline-block; width: 10px;"></span>
-            <a class="btnSub2" href="https://sandcastle.cesium.com/standalone.html#c=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">1. BusanCity(LoD1)</a>
-            <span style="display:inline-block; width: 10px;"></span>
-            <a class="btnSub2 btnSub22" href="http://168.115.119.139:8000/3dwebclient/?t=3DCityDB-Web-Map-Client&s=false&ts=0&la=35.586535&lo=139.749981&h=13733.37&hd=360&p=-45.08&r=360&l_0=u%3Dhttp%253A%252F%252F168.115.119.139%253A8000%252Fdata%252FData%252FCesium%2525203D%252520Tiles%252FTokyo%252F13113_shibuya-ku_2020_bldg_low_resolution%252Ftileset.json%26n%3D13113_shibuya-ku_2020_bldg_low_resolution%26ld%3DCesium%25203D%2520Tiles%26lp%3D%26lc%3D%26gv%3D%26a%3Dtrue%26tdu%3D%26ds%3DGoogleSheets%26tt%3DHorizontal%26gc%3D%26il%3D%26al%3D%26ac%3D%26av%3D&l_1=u%3Dhttp%253A%252F%252F168.115.119.139%253A8000%252Fdata%252FData%252FCesium%2525203D%252520Tiles%252FTokyo%252F02_bridge%252F13100_tokyo23ku_2020_bridge%252Ftileset.json%26n%3D13100_tokyo23ku_2020_bridge%26ld%3DCesium%25203D%2520Tiles%26lp%3D%26lc%3D%26gv%3D%26a%3Dtrue%26tdu%3D%26ds%3DGoogleSheets%26tt%3DHorizontal%26gc%3D%26il%3D%26al%3D%26ac%3D%26av%3D&l_2=u%3Dhttp%253A%252F%252F168.115.119.139%253A8000%252Fdata%252FData%252FCesium%2525203D%252520Tiles%252FTokyo%252F09_fld_ntl%252F13100_tokyo23ku_2020_fld_texture_mlit%252Farakawa_arakawa_l2%252Ftileset.json%26n%3D13100_tokyo23ku_2020_fld_texture_mlit_arakawa_arakawa_l2%26ld%3DCesium%25203D%2520Tiles%26lp%3D%26lc%3D%26gv%3D%26a%3Dtrue%26tdu%3D%26ds%3DGoogleSheets%26tt%3DHorizontal%26gc%3D%26il%3D%26al%3D%26ac%3D%26av%3D&l_3=u%3Dhttp%253A%252F%252F168.115.119.139%253A8000%252Fdata%252FData%252FCesium%2525203D%252520Tiles%252FTokyo%252F09_fld_ntl%252F13100_tokyo23ku_2020_fld_mlit%252Farakawa_arakawa_l1%252Ftileset.json%26n%3D13100_tokyo23ku_2020_fld_mlit_arakawa_arakawa_l1%26ld%3DCesium%25203D%2520Tiles%26lp%3D%26lc%3D%26gv%3D%26a%3Dtrue%26tdu%3D%26ds%3DGoogleSheets%26tt%3DHorizontal%26gc%3D%26il%3D%26al%3D%26ac%3D%26av%3D&sw=">2. JapanSmartVillage</a>
-            <span style="display:inline-block; width: 10px;"></span>
-            <a class="btnSub2 btnSub23" href="https://cesium.com/ion/stories/viewer/?id=a3cad660-662d-4769-bb4d-2932243c7afd">3. Busan ECO Delta Smart Village</a>
-            <span style="display:inline-block; width: 10px;"></span>
-            <a class="btnSub2" href="3dwebclient/" target="_blank">Edit View</a>
-            <span style="display:inline-block; width: 10px;"></span>
+        -->
+        <div id="menu1">
+          <a class="btnMain" href="/project" style="font-size:0.99em;" target="_blank">SmartCityLab Project</a>
+          <span style="display:inline-block; width: 10px;"></span>
         </div>
-        <div class="menu menuDummy"></div>
-        <div class="menu">
-            <a id="btnMain3" class="btnMain" href="#">Tutorial</a>
-            <span style="display:inline-block; width: 10px;"></span>
-            <a class="btnSub3" href="/tutorial" target="_blank">3DCityDB</a>
-            <span style="display:inline-block; width: 10px;"></span>
-            <a class="btnSub3" href="#" target="_blank">Lam</a>
-            <span style="display:inline-block; width: 10px;"></span>
+        <div id="menu2">
+          <a id="btnMain2" class="btnMain" href="#">3D Web-Map-Client</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnSub2" href="https://sandcastle.cesium.com/standalone.html#c=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">1. BusanCity(LoD1)</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnSub2" href="http://168.115.119.139:8000/3dwebclient/?t=3DCityDB-Web-Map-Client&s=false&ts=0&la=35.586535&lo=139.749981&h=13733.37&hd=360&p=-45.08&r=360&l_0=u%3Dhttp%253A%252F%252F168.115.119.139%253A8000%252Fdata%252FData%252FCesium%2525203D%252520Tiles%252FTokyo%252F13113_shibuya-ku_2020_bldg_low_resolution%252Ftileset.json%26n%3D13113_shibuya-ku_2020_bldg_low_resolution%26ld%3DCesium%25203D%2520Tiles%26lp%3D%26lc%3D%26gv%3D%26a%3Dtrue%26tdu%3D%26ds%3DGoogleSheets%26tt%3DHorizontal%26gc%3D%26il%3D%26al%3D%26ac%3D%26av%3D&l_1=u%3Dhttp%253A%252F%252F168.115.119.139%253A8000%252Fdata%252FData%252FCesium%2525203D%252520Tiles%252FTokyo%252F02_bridge%252F13100_tokyo23ku_2020_bridge%252Ftileset.json%26n%3D13100_tokyo23ku_2020_bridge%26ld%3DCesium%25203D%2520Tiles%26lp%3D%26lc%3D%26gv%3D%26a%3Dtrue%26tdu%3D%26ds%3DGoogleSheets%26tt%3DHorizontal%26gc%3D%26il%3D%26al%3D%26ac%3D%26av%3D&l_2=u%3Dhttp%253A%252F%252F168.115.119.139%253A8000%252Fdata%252FData%252FCesium%2525203D%252520Tiles%252FTokyo%252F09_fld_ntl%252F13100_tokyo23ku_2020_fld_texture_mlit%252Farakawa_arakawa_l2%252Ftileset.json%26n%3D13100_tokyo23ku_2020_fld_texture_mlit_arakawa_arakawa_l2%26ld%3DCesium%25203D%2520Tiles%26lp%3D%26lc%3D%26gv%3D%26a%3Dtrue%26tdu%3D%26ds%3DGoogleSheets%26tt%3DHorizontal%26gc%3D%26il%3D%26al%3D%26ac%3D%26av%3D&l_3=u%3Dhttp%253A%252F%252F168.115.119.139%253A8000%252Fdata%252FData%252FCesium%2525203D%252520Tiles%252FTokyo%252F09_fld_ntl%252F13100_tokyo23ku_2020_fld_mlit%252Farakawa_arakawa_l1%252Ftileset.json%26n%3D13100_tokyo23ku_2020_fld_mlit_arakawa_arakawa_l1%26ld%3DCesium%25203D%2520Tiles%26lp%3D%26lc%3D%26gv%3D%26a%3Dtrue%26tdu%3D%26ds%3DGoogleSheets%26tt%3DHorizontal%26gc%3D%26il%3D%26al%3D%26ac%3D%26av%3D&sw=">2. JapanSmartVillage</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnSub2" href="https://cesium.com/ion/stories/viewer/?id=cb291e2d-d65e-44b9-8f63-f236b804eac1">3. Busan ECO Delta Smart Village</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnSub2" href="3dwebclient/" target="_blank">Edit View</a>
+          <span style="display:inline-block; width: 10px;"></span>
         </div>
-        <div class="menu menuDummy"></div>
-        <div class="menu">
-            <a class="btnMain" href="data/" target="_blank">Show Data</a>
-            <span style="display:inline-block; width: 10px;"></span>
+        
+        <div id="menu3">
+          <a id="btnMain3" class="btnMain" href="#">Tutorial</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnSub3" href="/tutorial" target="_blank">3DCityDB</a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a class="btnSub3" href="#" target="_blank">Lam</a>
+          <span style="display:inline-block; width: 10px;"></span>
         </div>
+        
+        <div id="menu4">
+          <a class="btnMain" href="data/" target="_blank">Show Data</a>
+          <span style="display:inline-block; width: 10px;"></span>
         </div>
+
         <div class="containerimg">
-            <a href="https://www.3dcitydb.org/"><img class="contributorImg" id="theimg1" src="CityDBonDocker-big.png" /></a>
-            <span style="display:inline-block; width: 10px;"></span>
-            <a href="https://www.gis.bgu.tum.de/"><img class="contributorImg" id="theimg2" src="TUM_Logo_blau_rgb_s.svg" /></a>
+          <a href="https://www.3dcitydb.org/"><img class="contributorImg" id="theimg" src="CityDBonDocker-big.png" /></a>
+          <span style="display:inline-block; width: 10px;"></span>
+          <a href="https://www.gis.bgu.tum.de/"><img class="contributorImg" id="theimg" src="TUM_Logo_blau_rgb_s.svg" /></a>
         </div>
         <div class="contributor">
-            주관연구기관 : 동아대학교 &nbsp;&nbsp; 공동연구개발기관 : 한국수자원공사 | 한국국토정보공사 | 한국건설기술연구원 | (주) DI 솔루션
+          주관연구기관 : 동아대학교 &nbsp;&nbsp; 공동연구개발기관 : 한국수자원공사 | 한국국토정보공사 | 한국건설기술연구원 | (주) DI 솔루션
         </div>
-    </div>
-</body>
-</html>
+      </body>
+    </html>
