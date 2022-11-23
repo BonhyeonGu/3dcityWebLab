@@ -1,18 +1,16 @@
-FROM tumgis/3dcitydb-web-map
+#FROM tumgis/3dcitydb-web-map
+FROM node:16
 LABEL email="bonhyeon.gu@9bon.org"
 LABEL name="BonhyeonGu"
 
-WORKDIR /
-USER root
+WORKDIR /usr/src/app
 RUN apt-get update
-RUN apt-get install -y git
-RUN git config --global http.sslVerify false
-RUN git clone https://github.com/BonhyeonGu/3dcityWebLab
-RUN ls -al /var/www/data/
-RUN cp -rf /3dcityWebLab/* /var/www
-RUN ls -al /var/www/data/
+RUN apt-get install -y git nano tzdata
 
-WORKDIR /var/www
-USER node
-EXPOSE <web outport>
+RUN git clone https://github.com/BonhyeonGu/3dcityWebLab 3dcity
+
+WORKDIR /usr/src/app/3dcity
+RUN export NODE_OPTIONS=--max_old_space_size=16384
+RUN npm install
+RUN mkdir data
 CMD [ "node", "server.js", "--public"]
