@@ -22,7 +22,7 @@ bimserver, bimsurfer, xeokit-viewer 가 사용될 계획입니다.
 
 ## Docker Install (full)
 
-1. 동봉되어있는 Dockerfile, docker-compose.yml에 꺽쇠 괄호 <>로 되어있는 부분을 직접 수정해주세요
+1. 동봉되어있는 docker-compose.yml에 페스워드를 포함한 중요한 부분을 수정해주세요.
 2. 명령어 docker-compose up -d 를 사용하여 구성 완료됩니다.
 
 ## On-premise Install (web-only)
