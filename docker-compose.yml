@@ -1,7 +1,7 @@
 version: "3"
 services:
   3dcitydb:
-    container_name: 3dcitydb
+    container_name: 00_3dcitydb_00_database
     image: 3dcitydb/3dcitydb-pg:14-3.2-4.1.0
     ports:
       - "5432:5432"
@@ -9,12 +9,13 @@ services:
       SRID: 25832
       POSTGRES_DB: city
       POSTGRES_USER: city
-      POSTGRES_PASSWORD: 1234
+      POSTGRES_PASSWORD: city
     restart: always
+
   3dcitydbweb:
     tty: true
     stdin_open: true
-    container_name: 3dcitydbweb
+    container_name: 00_3dcitydb_01_web
     build:
       context: .
       dockerfile: ./Dockerfile
